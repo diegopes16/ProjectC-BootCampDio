@@ -244,39 +244,56 @@ void AtualizarMidia(MidiaRepositorio repositorio)
 	{
 		Console.WriteLine("Digite o id do filme:");
 	}
-	int indiceMidia = int.Parse(Console.ReadLine());
-
-	bool idexiste = (indiceMidia < repositorio.Lista().Count());
-    if (idexiste)
-    {
-		foreach (int i in Enum.GetValues(typeof(Genero)))
+	bool indiceValido = int.TryParse(Console.ReadLine(), out int indiceMidia);
+	if (indiceValido)
+	{
+		bool idexiste = (indiceMidia < repositorio.Lista().Count());
+		if (idexiste)
 		{
-			Console.WriteLine("{0}-{1}", i, Enum.GetName(typeof(Genero), i));
+			foreach (int i in Enum.GetValues(typeof(Genero)))
+			{
+				Console.WriteLine("{0}-{1}", i, Enum.GetName(typeof(Genero), i));
+			}
+			Console.WriteLine("Digite o número do gênero entre as opções acima: ");
+			bool entradaGeneroValido = int.TryParse(Console.ReadLine(), out int entradaGenero);
+			while (!entradaGeneroValido || entradaGenero < 1 ||entradaGenero > 13 ) //valores validos para genero
+            {
+				Console.WriteLine("Por favor digite um número válido ");
+				entradaGeneroValido = int.TryParse(Console.ReadLine(), out entradaGenero);
+			}
+
+			Console.WriteLine("Digite o Título: ");
+			string entradaTitulo = Console.ReadLine();
+
+			Console.WriteLine("Digite o Ano de Início/Lançamento: ");
+			bool entradaAnoValido = int.TryParse(Console.ReadLine(), out int entradaAno);
+			while (!entradaAnoValido || entradaAno < 1)  //valores validos para ano
+			{
+				Console.WriteLine("Por favor digite um ano válido ");
+				entradaAnoValido = int.TryParse(Console.ReadLine(), out entradaAno);
+			}
+
+			Console.WriteLine("Digite a Descrição: ");
+			string entradaDescricao = Console.ReadLine();
+
+			Midia atualizaMidia = new Midia(id: indiceMidia,
+										genero: (Genero)entradaGenero,
+										titulo: entradaTitulo,
+										ano: entradaAno,
+										descricao: entradaDescricao);
+			repositorio.Atualiza(indiceMidia, atualizaMidia);
 		}
-		Console.WriteLine("Digite o gênero entre as opções acima: ");
-		int entradaGenero = int.Parse(Console.ReadLine());
-
-		Console.WriteLine("Digite o Título: ");
-		string entradaTitulo = Console.ReadLine();
-
-		Console.WriteLine("Digite o Ano de Início/Lançamento: ");
-		int entradaAno = int.Parse(Console.ReadLine());
-
-		Console.WriteLine("Digite a Descrição: ");
-		string entradaDescricao = Console.ReadLine();
-
-        Midia atualizaMidia = new Midia(id: indiceMidia,
-									genero: (Genero)entradaGenero,
-									titulo: entradaTitulo,
-									ano: entradaAno,
-									descricao: entradaDescricao);
-		repositorio.Atualiza(indiceMidia, atualizaMidia);
-	}
+		else
+		{
+			Console.WriteLine("Não existe nenhum registro com esse ID.");
+			ListarMidia(repositorio);
+		}
+    }
     else
     {
-		Console.WriteLine("Não existe nenhum registro com esse ID.");
-		ListarMidia(repositorio);
-    }
+		Console.WriteLine("Digite um número.");
+		AtualizarMidia(repositorio);
+	}
 }
 
 void InserirMidia(MidiaRepositorio repositorio)
@@ -294,13 +311,24 @@ void InserirMidia(MidiaRepositorio repositorio)
 		Console.WriteLine("{0}-{1}", i, Enum.GetName(typeof(Genero), i));
 	}
 	Console.Write("Digite o gênero entre as opções acima: ");
-	int entradaGenero = int.Parse(Console.ReadLine());
+	bool entradaGeneroValido = int.TryParse(Console.ReadLine(), out int entradaGenero);
+	while (!entradaGeneroValido || entradaGenero < 1 || entradaGenero > 13) //valores validos para genero
+	{
+		Console.WriteLine("Por favor digite um número válido ");
+		entradaGeneroValido = int.TryParse(Console.ReadLine(), out entradaGenero);
+	}
+
 
 	Console.Write("Digite o Título : ");
 	string entradaTitulo = Console.ReadLine();
 
 	Console.Write("Digite o Ano de Início/Lançamento: ");
-	int entradaAno = int.Parse(Console.ReadLine());
+	bool entradaAnoValido = int.TryParse(Console.ReadLine(), out int entradaAno);
+	while (!entradaAnoValido || entradaAno < 1) //valores validos para ano
+	{
+		Console.WriteLine("Por favor digite um ano válido ");
+		entradaAnoValido = int.TryParse(Console.ReadLine(), out entradaAno);
+	}
 
 	Console.Write("Digite a Descrição: ");
 	string entradaDescricao = Console.ReadLine();

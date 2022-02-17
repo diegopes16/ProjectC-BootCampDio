@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Diego\\Desktop\\Workspace\\Csharpdotnet\\newConstrutores\\ProjectSeries\\ProjectSeries\\ProjectSeries.csproj": {}
+    "C:\\Users\\Diego\\Desktop\\Workspace\\Csharpdotnet\\newConstrutores\\BootCampDio_Localiza\\ProjectC-BootCampDio\\ProjectSeries\\ProjectSeries.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Diego\\Desktop\\Workspace\\Csharpdotnet\\newConstrutores\\ProjectSeries\\ProjectSeries\\ProjectSeries.csproj": {
+    "C:\\Users\\Diego\\Desktop\\Workspace\\Csharpdotnet\\newConstrutores\\BootCampDio_Localiza\\ProjectC-BootCampDio\\ProjectSeries\\ProjectSeries.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Diego\\Desktop\\Workspace\\Csharpdotnet\\newConstrutores\\ProjectSeries\\ProjectSeries\\ProjectSeries.csproj",
+        "projectUniqueName": "C:\\Users\\Diego\\Desktop\\Workspace\\Csharpdotnet\\newConstrutores\\BootCampDio_Localiza\\ProjectC-BootCampDio\\ProjectSeries\\ProjectSeries.csproj",
         "projectName": "ProjectSeries",
-        "projectPath": "C:\\Users\\Diego\\Desktop\\Workspace\\Csharpdotnet\\newConstrutores\\ProjectSeries\\ProjectSeries\\ProjectSeries.csproj",
+        "projectPath": "C:\\Users\\Diego\\Desktop\\Workspace\\Csharpdotnet\\newConstrutores\\BootCampDio_Localiza\\ProjectC-BootCampDio\\ProjectSeries\\ProjectSeries.csproj",
         "packagesPath": "C:\\Users\\Diego\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Diego\\Desktop\\Workspace\\Csharpdotnet\\newConstrutores\\ProjectSeries\\ProjectSeries\\obj\\",
+        "outputPath": "C:\\Users\\Diego\\Desktop\\Workspace\\Csharpdotnet\\newConstrutores\\BootCampDio_Localiza\\ProjectC-BootCampDio\\ProjectSeries\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Diego\\AppData\\Roaming\\NuGet\\NuGet.Config",
